@@ -1,0 +1,119 @@
+@media (max-width: 768px) {
+    .modal-dialog {
+      margin: 0;
+      max-width: 100%;
+    }
+    .modal-content {
+      height: 100vh;
+      border-radius: 0;
+    }
+  }
+  
+
+
+
+  :root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --modal-bg: rgba(0, 0, 0, 0.5);
+    --calendar-bg: #f9f9f9;
+    --btn-border: #007bff;
+  }
+  
+  [data-theme='dark'] {
+    --bg-color: #1e1e1e;
+    --text-color: #f5f5f5;
+    --modal-bg: rgba(255, 255, 255, 0.1);
+    --calendar-bg: #2a2a2a;
+    --btn-border: #0dcaf0;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  .rbc-calendar {
+    background-color: var(--calendar-bg);
+    color: var(--text-color);
+  }
+  
+  .rbc-event {
+    background-color: var(--btn-border);
+    color: white;
+    border: none;
+  }
+  
+  .modal {
+    background-color: var(--modal-bg);
+  }
+  
+  .btn {
+    color: var(--text-color);
+    border-color: var(--btn-border);
+  }
+  
+  .btn:hover {
+    background-color: var(--btn-border);
+    color: white;
+  }
+  
+  input, select {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid #ccc;
+  }
+
+
+.btn-appointment {
+    color: var(--btn-border);
+    border-color: var(--btn-border);
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .btn-appointment:hover,
+  .btn-appointment:focus {
+    background-color: var(--btn-border);
+    color: var(--bg-color);
+    border-color: var(--btn-border);
+    outline: none;
+    box-shadow: none;
+  }
+  
+  
+
+
+
+
+  /* ............................................... */
+
+body[data-theme='dark'] {
+    --btn-border: #ccc;
+    --btn-hover-bg: #555;
+    --btn-hover-text: #fff;
+    background-color: #121212;
+    color: #eaeaea;
+  }
+  
+  body[data-theme='light'] {
+    --btn-border: #333;
+    --btn-hover-bg: #ddd;
+    --btn-hover-text: #000;
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .btn-outline-info,
+  .btn-outline-secondary {
+    border-color: var(--btn-border);
+    color: var(--btn-border);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-outline-info:hover,
+  .btn-outline-secondary:hover {
+    background-color: var(--btn-hover-bg);
+    color: var(--btn-hover-text);
+  }
+  

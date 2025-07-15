@@ -1,33 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState,useContext } from 'react'
+import { Routes,Route } from 'react-router-dom'
 import './App.css'
+import Auth from './pages/Auth'
+import Home from './pages/Home'
+import Agenda from './pages/Agenda'
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify'
+import { ThemeContext } from './context/ThemeProvider'
+import { Link, useLocation } from 'react-router-dom'
 
 function App() {
   const [count, setCount] = useState(0)
+  const location=useLocation()
+  const { darkMode, toggleDarkMode } = useContext(ThemeContext);
+  console.log(location.pathname);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+<nav className="p-3 d-flex justify-content-between align-items-center ">
+  <div className="fw-bold"></div>
+
+  <button
+    onClick={toggleDarkMode}
+    className={`btn btn-sm btn-outline-primary ms-auto ${location.pathname === '/' ? 'd-none' : ''}`}
+    >
+    {darkMode ? '☀ Light Mode' : '🌙 Dark Mode'}
+  </button>
+</nav>
+    <Routes>
+      <Route path='/' element={<Auth/>}/>
+      <Route path='/home' element={<Home/>}/>
+      <Route path='/agenda' element={<Agenda/>}/>
+
+    </Routes>
+    <ToastContainer/>
+
+     
     </>
   )
 }
